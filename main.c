@@ -89,10 +89,11 @@ void increaseLum()
 {
 	x = 0000000000 | ( CCPR1L << 2 );
 	x = x | CCP1CONbits.DC1B;
-
+        x++
+        
 	if ( x < 1024 )
 	{
-		setLum(++x);
+		setLum(x);
 		__delay_ms(5);
 	}
 
@@ -102,10 +103,11 @@ void decreaseLum()
 {
 	x = 0000000000 | ( CCPR1L << 2 );
 	x = x | CCP1CONbits.DC1B;
-
+        x--;
+        
 	if ( x > 0 )
 	{
-		setLum(--x);
+		setLum(x);
 		__delay_ms(5);
 	}
 
